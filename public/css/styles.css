@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif; /* Aplicar la fuente Inter */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    width: 100%;
+    position: absolute;
+    top: 50px; /* Baja la barra de navegación 50px desde el tope */
+    left: 0;
+    z-index: 4; /* Asegura que esté sobre el rectángulo de gradiente */
+    padding: 15px 0;
+    text-align: center;
+    background: transparent; /* Barra de navegación transparente */
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    color: #fff; /* Color del texto */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 32px; /* Tamaño de la fuente */
+    text-transform: uppercase; /* Pone el texto en mayúsculas */
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: -300px -50px;
+    display: block;
+    z-index: 2; 
+}
+
+.imagenHead {
+    position: absolute;
+    top: 40px; left: 40px;
+    width: 12%;
+    height: auto;
+    object-fit: cover;
+    z-index: 5; /* Asegura que esté por encima de todo lo demás */
+}
+
+.rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to left,
+        rgba(113, 12, 53, 0.6),
+        rgba(223, 53, 43, 0.5)
+    );
+    z-index: 3; /* Asegura que esté sobre el rectángulo verde y debajo de la barra de navegación */
+}
+
+.green-rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0C0C0E; /* Color verde deseado */
+    z-index: 1; /* Asegura que esté detrás de la imagen y el gradiente */
+}
+
+/* Media query para ajustar el tamaño en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        height: 100vh;
+    }
+}
